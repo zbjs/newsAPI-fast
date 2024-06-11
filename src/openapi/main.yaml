@@ -24,9 +24,9 @@ servers:
     description: Staging server
 tags:
   $ref: './tags.yaml'
-# paths:
-#   $ref: './paths.yaml'
-# components:
-#   schemas:
-#     $ref: './schemas.yaml'
-#   $ref: './components.yaml'
+paths:
+  $ref: './paths.yaml'
+components:
+  schemas:
+    $ref: './schemas.yaml'
+  $ref: './components.yaml'

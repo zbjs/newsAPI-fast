@@ -1,65 +1,9 @@
-/user:
-  get:
-    tags:
-    - User
-    summary: Get auth user
-    description: Get auth user
-    responses:
-      '200':
-        description: A successful response
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                data:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/User'
-      '400':
-        description: Bad request
-      '404':
-        description: Not found
-      '500':
-        description: Server error
-  post: 
-    tags:
-    - User
-    summary: Create a new user
-    description: Create a new user
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/User'
-    responses:
-      '200':
-        description: A successful response
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                data:
-                  $ref: '#/components/schemas/User'
-/signup:
-  post:
-    tags:
-    - Auth
-    summary: Create a new user
-    description: validate all fields, then create a new user
-    requestBody:
-      required: true
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/signupSchema'
-    responses:
-      '200':
-        description: A successful response
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
+paths:
+  User:
+    get:
+      summary: Get all users
+      description: Get all users
+      tags:
+        - User
+
+        
