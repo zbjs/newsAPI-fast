@@ -1,36 +1,16 @@
-const app = require("./app");
-const dotenv = require("dotenv");
-// require("./config/db");
-const router = require("./routes");
-
-dotenv.config();
+// src/index.ts
+import app from "./app";
 
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+})
 
-app.use("/api", router)
 
-// error handling middleware
+const PORT = process.env.PORT || 3000
 
-// 404 not found middleware
-app.use((_req, res, _next) => {
-  return res.status(404).json({
-    success: false,
-    message: "Not found",
-  });
-});
-
-// server error middleware
-app.use((err, _req, res, _next) => {
-  return res.status(500).json({
-    success: false,
-    message: err.message,
-  });
-});
-
-// bad request middleware
-app.use((err, _req, res, _next) => {
-  return res.status(400).json({
-    success: false,
-    message: err.message,
-  });
-});
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
