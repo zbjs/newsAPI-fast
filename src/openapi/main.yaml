@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: Blog API Documentation
+  version: 1.0.0
+  description: A blog API, for Kazi Byte
+  termsOfService: https://kazibyte.github.io/t&s/
+  contact:
+    name: kazibyte API Team
+    url: https://kazibyte.github.io
+    email: kazibyte
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0
+security:
+  - bearerAuth: []
+servers:
+  - url: http://localhost:8000
+    description: Development server
+  - url: http://localhost:8001
+    description: Staging server
+tags:
+  $ref: './tags.yaml'
+paths:
+  $ref: './paths.yaml'
+components:
+  schemas:
+    $ref: './schemas.yaml'
+  $ref: './components.yaml'

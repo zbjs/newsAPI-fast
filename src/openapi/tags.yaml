@@ -1,0 +1,12 @@
+- name: Auth
+  description: Auth API
+- name: User
+  description: User API
+- name: Blog
+  description: Blog API 
+- name: Comments
+  description: Comments API
+- name: Tags
+  description: Tags API
+- name: Categories
+  description: Categories API
